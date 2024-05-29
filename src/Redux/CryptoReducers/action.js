@@ -8,6 +8,7 @@ export const getData = ()=> (dispatch)=> {
         return res.json()
     })
     .then(function(data){
+        console.log(data);
         dispatch({type: GET_DATA_SUCCESS, payload: data})
     })
     .catch(function(){

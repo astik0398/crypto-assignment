@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import LineChart from '../Chart/LineChart'
 
 const SingleCoin = () => {
 
@@ -21,10 +22,12 @@ const SingleCoin = () => {
   return (
     <div>
         <h1>{singleData.name}</h1>
-        <div style={{display:'flex', alignItems:'center', border:'1px solid red'}}>
+        <div style={{display:'flex', alignItems:'center'}}>
             <img src={singleData.image?.large} alt="" />
             <p style={{width:'80%', textAlign:'left'}}>{singleData.description?.en}</p>
         </div>
+
+        <LineChart/>
     </div>
   )
 }
