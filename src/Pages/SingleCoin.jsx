@@ -6,21 +6,24 @@ const SingleCoin = () => {
 
     const {id} = useParams()
     const [singleData, setSingleData] = useState({})
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(()=> {
-
+        setIsLoading(true)
     const response = fetch(`https://api.coingecko.com/api/v3/coins/${id}`)
     response.then(function(res){
         return res.json()
     })
     .then(function(data){
         setSingleData(data);
+        setIsLoading(false)
     })
 
     }, [])
 
   return (
-    <div>
+    <>
+    {isLoading ? <span class="loader"></span> : <div>
         <h1>{singleData.name}</h1>
         <div style={{display:'flex', alignItems:'center'}}>
             <img src={singleData.image?.large} alt="" />
@@ -28,7 +31,8 @@ const SingleCoin = () => {
         </div>
 
         <LineChart/>
-    </div>
+    </div>}
+    </>
   )
 }
 

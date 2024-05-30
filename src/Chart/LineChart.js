@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2'
 import 'chart.js/auto';
+import { useParams } from 'react-router-dom';
 
 const LineChart = () => {
     const [prices, setPrices] = useState([]);
     const [date, setDate] = useState([])
+    const {id} = useParams()
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=INR&days=10&interval=daily');
+                const response = await fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=INR&days=10&interval=daily`);
                 const data = await response.json();
                 // Extracting prices and dates from the data
                 const pricesData = data.prices.map(item => item[1]);
