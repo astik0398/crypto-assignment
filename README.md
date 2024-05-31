@@ -12,6 +12,12 @@ This project is a React application that displays live stock prices of various c
 
 4. `React Lifecycle Methods`: Appropriate React lifecycle methods are utilized throughout the application for efficient rendering and state management.
 
+## Screenshots
+
+![alt text](<Screenshot (1306).png>)
+
+![alt text](<Screenshot (1307).png>)
+
 ## Redux State Management
 
 1. Redux is integrated into the application for state management purposes.
