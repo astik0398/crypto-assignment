@@ -22,8 +22,9 @@ const AllCryptos = () => {
 
   return (
     <div>
-        {loading ? <span class="loader"></span> : <table style={{width:'90%', margin:'auto'}}>
-            <tr>
+        {loading ? <span class="loader"></span> : <div  class="tbl-header">
+        <table class="tbl-content" cellPadding={0} cellSpacing={0} >
+            <tr style={{backgroundColor:  'rgba(255,255,255,0.3)'}}>
                 <th>IMAGE</th>
                 <th>NAME</th>
                 <th>SYMBOL</th>
@@ -41,7 +42,8 @@ const AllCryptos = () => {
                 <td id='highest'>{item.high_24h}</td>
             </tr>
            })}
-        </table>}
+        </table>
+            </div>}
     </div>
   )
 }
