@@ -25,9 +25,9 @@ const SingleCoin = () => {
     <>
     {isLoading ? <span class="loader"></span> : <div>
         <h1>{singleData.name}</h1>
-        <div style={{display:'flex', alignItems:'center'}}>
+        <div style={{display:'flex', justifyContent:'space-around' ,alignItems:'center'}}>
             <img src={singleData.image?.large} alt="" />
-            <p style={{width:'80%', textAlign:'left'}}>{singleData.description?.en}</p>
+            <p style={{width:'75%', textAlign:'left'}}>{singleData.description?.en}</p>
         </div>
 
         <LineChart/>
