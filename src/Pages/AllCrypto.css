@@ -87,3 +87,19 @@ section{
       transform: rotate(360deg);
     }
   } 
+
+  /* Responsive */
+
+  @media only screen and (max-width: 450px) {
+    .tbl-content th,
+    .tbl-content td {
+        font-size: 12px;
+    }
+
+    .tbl-content th:first-child,
+    .tbl-content td:first-child,
+    .tbl-content th:nth-child(2),
+    .tbl-content td:nth-child(2) {
+        display: none;
+    }
+}
